@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Pacifico&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&family=Quicksand:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
 html, *{
     margin: 0;
@@ -12,16 +13,16 @@ body{
     margin: 0;
 }
 .navbar{
-    height: 60px;
-    background-color: rgba(225, 227, 233, 0.808);
+    /* height: 60px; */
+    background-color: transparent;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding: 0 2em;
     /* line-height: 60px; */
     align-items: center;
-    position: fixed;
+    position: absolute;
     width: 100%;
+    padding: 2em 4em;
+    transition: all .5s ease;
 }
 .menu-call{
     display: flex;
@@ -37,7 +38,7 @@ body{
     padding: 0 .5em;
     /* line-height: 60px; */
     text-decoration: none;
-    color: rgb(41, 32, 32);
+    color: rgb(236, 232, 232);
 }
 .phone-call{
     height: 18px;
@@ -58,7 +59,7 @@ body{
 }
 .logo h3 a{
     text-decoration: none;
-    color: rgb(66, 47, 148);
+    color: white;
     font-size: 1.1em;
     font-family: Pacifico;
 }
@@ -74,6 +75,10 @@ body{
     display: block;
     cursor: pointer;
     transform: scale(1.3);
+    color: white;
+}
+.ham_menu i {
+    color: white;
 }
 
 .show{
@@ -83,7 +88,7 @@ body{
 
 
 .home{
-    max-width: 100%;
+    width: 100%;
     min-height: 100vh;
     background-image: url("/imgs/nasa-Q1p7bh3SHj8-unsplash.jpg");
     background-size: cover;
@@ -94,16 +99,23 @@ body{
     padding: 0 100px ;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .home-info{
     max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .home-info h1{
-    font-size: 2em;
+    font-size: 2.4em;
     font-family: inter;
     margin-bottom: .5em;
     font-size: 600;
+    text-decoration: underline;
 }
 .home-info p {
     font-size: 1.1em;
@@ -117,13 +129,19 @@ body{
     font-family: quicksand;
     color: white;
     font-weight: 600;
-    font-size: .9em;
+    font-size: 1em;
     background-color: blue;
+}
+#about-btn{
+    color: white;
+    text-decoration: none;
 }
 
 .services{
     min-height: 100vh;
     padding: 100px;
+    background-color: rgb(245, 242, 234);
+    width: 100%;
 }
 
 .serv_info{
@@ -169,17 +187,36 @@ body{
     min-height: 80vh;
     display: flex;
     background-color: seashell;
+    width: 100%;
 }
 .near-img{
     width: 50%;
     height: 100%;
     margin-right: 2em;
+    overflow: hidden;
 }
 .near-img img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    --b: 5px; /* border thickness */
+    --c: #0000 90deg, darkblue 0; /* define the color here */
+    padding: 10px;
+    background:
+      conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--c)) 0 0,
+      conic-gradient(from 180deg at top    var(--b) right var(--b), var(--c)) 100% 0,
+      conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--c)) 0 100%,
+      conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--c)) 100% 100%;
+    background-size: 50px 50px; /* adjust border length here */
+    background-repeat: no-repeat;
+    transition: all .5s ease;
 }
+.near-img img:hover{
+    background-size: 51% 51%;
+}
+/* .near-img:hover img{
+    transform: scale(1.1);
+} */
 .near-info h1 {
     text-decoration: underline;
     margin-bottom: 1em;
@@ -191,10 +228,112 @@ body{
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1000px) {
+.testimonials {
+    width: 100%;
+    height: auto;
+    padding: 4em 0;
+    position: relative;
+    background-color: rgba(243, 237, 233, 0.877);
+}
+.test_head{
+    margin: 0 auto;
+    text-align: center;
+}
+.test_head h1{
+    text-decoration: underline;
+}
+.test-card{
+    max-width: 50%;
+    margin: 2em auto;
+    text-align: center;
+    padding: 1.5em 3em;
+    border: 1px solid rgb(204, 202, 202);
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px rgb(122, 121, 121);
+}
+.test-img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.bi-chevron-left{
+    margin: auto 1em;
+    color: white;
+}
+.test-left{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: blue;
+    margin: auto 1em;
+    position: absolute;
+    top: 50%;
+    left: 18%;
+}
+.bi-chevron-right{
+    margin: auto 1em;
+    color: blue;
+}
+.test-right{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border:1px solid blue;
+    margin: auto 1em;
+    position: absolute;
+    top: 50%;
+    right: 18%;
+}
+
+footer{
+    height: auto;
+    width: 100%;
+    padding: 4em 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fone{
+    display: flex;
+    justify-content: space-between;
+}
+.ftwo{
+    text-align: center;
+    max-width: 600px;
+    margin: 2em auto;
+    font-size: .9em;
+}
+.flists{
+    display: flex;
+    margin: 0 auto;
+}
+.flist{
+    margin: 0 1.5em;
+}
+.flist ul li a{
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+}
+.flist ul{
+    list-style: none;
+}
+.media
+
+@media (max-width:1000px) {
     .home-info{
         max-width: 80%;
         margin: 0 auto;
+    }
+    .services{
+        align-items: center;
     }
     .serv_info{
         max-width: 80%;
@@ -213,5 +352,38 @@ body{
         height: auto;
         margin-bottom: 1em;
     }
-    
+    .navbar{
+        width: 100%;
+        padding: 2em;
+    }
+    h1{
+        font-size: 32px;
+    }
+    .home-btns button{
+        margin: .5em 0;
+    }
+    .test-card{
+        max-width: 80%;
+    }
+    .test-left, .test-right{
+        display: none;
+    }
+}
+
+@media (max-width:400px){
+    h1{
+        font-size: 24px;
+    }
+    .home, .services, .nearest{
+        padding: 2em;
+    }
+    .serv_card{
+        margin: 1em 0;
+    }
+    .navbar{
+     padding: 2em;   
+    }
+    .home-btns button{
+        margin: .5em 0;
+    }
 }
