@@ -119,11 +119,11 @@ button{
 .home{
     width: 100%;
     min-height: 100vh;
-    background-image: url(imgs/nasa-Q1p7bh3SHj8-unsplash-min.jpg);
+/*     background-image: url(imgs/nasa-Q1p7bh3SHj8-unsplash-min.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     background-color: rgba(29, 13, 102, 0.425);
-    background-blend-mode: multiply;
+/*     background-blend-mode: multiply; */
     color: white;
     padding: 0 100px ;
     display: flex;
